@@ -30,7 +30,7 @@
     "release": "changeset publish",
     "test": "tsc --noEmit && rstest run",
     "test:all": "pnpm test && pnpm test:browser",
-    "test:browser": "rstest run --browser",
+    "test:browser": "rstest run --browser.enabled",
     "test:watch": "rstest watch",
     "version": "changeset version"
   },

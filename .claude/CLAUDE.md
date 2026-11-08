@@ -27,7 +27,10 @@ Browser tests need a one-time `pnpm exec playwright install chromium`. They are
 kept out of `pnpm test` so the default suite stays fast and install-free; CI runs
 both suites. If the Chromium download is unavailable, an installed Edge browser
 works locally via
-`pnpm exec rstest run --browser --browser.providerOptions.launch.channel msedge`.
+`pnpm exec rstest run --browser.enabled --browser.providerOptions.launch.channel msedge`.
+Use `--browser.enabled` rather than bare `--browser`: Rstest 0.12.6 rejects the
+latter during CLI wildcard validation unless a `--browser.*` sub-option is also
+present.
 
 ## Structure
 

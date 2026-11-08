@@ -52,7 +52,8 @@ Apply these rules when writing or reviewing Rstest test projects.
 - Prefer `happy-dom` for faster simulated DOM testing; use `jsdom` when better browser API compatibility is needed
 - `happy-dom` and `jsdom` are **not real browsers**: they cannot validate browser-engine behavior, layout, or the actual browser module/runtime environment
 - For real browser testing, use `@rstest/browser` with Playwright. Install the adapter (`@rstest/browser`) and `playwright`, then download a browser with `npx playwright install chromium`
-- Enable browser mode with `browser: { enabled: true, provider: 'playwright', browser: 'chromium' }` or the `--browser` CLI flag
+- Enable browser mode with `browser: { enabled: true, provider: 'playwright', browser: 'chromium' }` or the `--browser.enabled` CLI flag
+- Prefer `--browser.enabled` over bare `--browser`; Rstest 0.12.6's wildcard validation rejects bare `--browser` unless a `--browser.*` sub-option is also present
 - Keep browser mode opt-in with a separate `test:browser` script when you want the default Node suite to stay fast and browser-installation-free
 - Since 0.12, browser mode reaches parity with Node mode: native V8 coverage, `rs.mock`, `includeSource`, `globalSetup`, Module Federation, and watch shortcuts all work
 - All browser projects in one run must share identical provider/browser/headless/port settings
