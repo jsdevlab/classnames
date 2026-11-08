@@ -1,6 +1,6 @@
 {
   "name": "@jsdevlab/classnames",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "Type-safe classnames utility — conditional classes with lazy evaluation and deduplication by default. Framework-agnostic.",
   "keywords": [],
