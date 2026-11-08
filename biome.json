@@ -28,7 +28,8 @@
       "!node_modules/**",
       "!build/**",
       "!scripts/**",
-      "!packages/core/styles/**/*.css"
+      "!packages/core/styles/**/*.css",
+      "!.changeset/**"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
