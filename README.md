@@ -337,11 +337,17 @@ Requires Node.js ≥ 24.19 and pnpm 12.18.
 
 ```bash
 pnpm install
-pnpm test        # tsc --noEmit + rstest
-pnpm build       # rslib build → dist/
-pnpm check       # Biome lint + fix
-pnpm format      # Biome format + fix
+pnpm test          # tsc --noEmit + Node test suite
+pnpm test:browser  # same suite in real Chromium
+pnpm test:all      # Node + browser suites
+pnpm build         # rslib build → dist/
+pnpm check         # Biome lint + fix
+pnpm format        # Biome format + fix
 ```
+
+Browser tests download Chromium once with
+`pnpm exec playwright install chromium`; they are kept separate from
+`pnpm test` so the default suite stays fast.
 
 Releases are managed with [changesets](https://github.com/changesets/changesets):
 

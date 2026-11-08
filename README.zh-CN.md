@@ -329,11 +329,17 @@ const { classNames } = require('@jsdevlab/classnames');
 
 ```bash
 pnpm install
-pnpm test        # tsc --noEmit + rstest
-pnpm build       # rslib 构建 → dist/
-pnpm check       # Biome 检查并修复
-pnpm format      # Biome 格式化并修复
+pnpm test          # tsc --noEmit + Node 测试套件
+pnpm test:browser  # 在真实 Chromium 中运行同一套测试
+pnpm test:all      # Node + 浏览器测试
+pnpm build         # rslib 构建 → dist/
+pnpm check         # Biome 检查并修复
+pnpm format        # Biome 格式化并修复
 ```
+
+浏览器测试首次运行前需执行
+`pnpm exec playwright install chromium` 下载 Chromium；它与 `pnpm test`
+分开，以保持默认测试套件轻快。
 
 发布流程使用 [changesets](https://github.com/changesets/changesets)：
 
